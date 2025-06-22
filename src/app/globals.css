@@ -10,6 +10,7 @@
   --font-mono: var(--font-geist-mono);
   --font-handlee: var(--font-handlee);
   --font-inter: var(--font-inter);
+  --font-courier: var(--font-courier);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -43,28 +44,73 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite
+    alternate;
   --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
   @keyframes shimmer-slide {
-  to {
-    transform: translate(calc(100cqw - 100%), 0);
+    to {
+      transform: translate(calc(100cqw - 100%), 0);
     }
   }
   @keyframes spin-around {
-  0% {
-    transform: translateZ(0) rotate(0);
+    0% {
+      transform: translateZ(0) rotate(0);
     }
-  15%, 35% {
-    transform: translateZ(0) rotate(90deg);
+    15%,
+    35% {
+      transform: translateZ(0) rotate(90deg);
     }
-  65%, 85% {
-    transform: translateZ(0) rotate(270deg);
+    65%,
+    85% {
+      transform: translateZ(0) rotate(270deg);
     }
-  100% {
-    transform: translateZ(0) rotate(360deg);
+    100% {
+      transform: translateZ(0) rotate(360deg);
     }
   }
-}
+
+  @keyframes goofyWiggle {
+    0%,
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+    10% {
+      transform: rotate(5deg) scale(1.05);
+    }
+    20% {
+      transform: rotate(-5deg) scale(1.1);
+    }
+    30% {
+      transform: rotate(3deg) scale(1.05);
+    }
+    40% {
+      transform: rotate(-3deg) scale(1.08);
+    }
+    50% {
+      transform: rotate(2deg) scale(1.02);
+    }
+    60% {
+      transform: rotate(-2deg) scale(1.04);
+    }
+    70% {
+      transform: rotate(1deg) scale(1.01);
+    }
+    80% {
+      transform: rotate(-1deg) scale(1.03);
+    }
+    90% {
+      transform: rotate(0.5deg) scale(1.02);
+    }
+  }
+
+  --animate-orbit: orbit calc(var(--duration)*1s) linear infinite
+
+;
+  @keyframes orbit {
+  0% {
+    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));}
+  100% {
+    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));}}}
 
 :root {
   --radius: 0.625rem;
@@ -141,5 +187,49 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .animate-goofy {
+    animation: goofyWiggle 1s ease-in-out infinite;
+    width: 50rem;
+  }
+}
+
+@layer utilities {
+  @keyframes goofyWiggle {
+    0%,
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+    10% {
+      transform: rotate(5deg) scale(1.05);
+    }
+    20% {
+      transform: rotate(-5deg) scale(1.1);
+    }
+    30% {
+      transform: rotate(3deg) scale(1.05);
+    }
+    40% {
+      transform: rotate(-3deg) scale(1.08);
+    }
+    50% {
+      transform: rotate(2deg) scale(1.02);
+    }
+    60% {
+      transform: rotate(-2deg) scale(1.04);
+    }
+    70% {
+      transform: rotate(1deg) scale(1.01);
+    }
+    80% {
+      transform: rotate(-1deg) scale(1.03);
+    }
+    90% {
+      transform: rotate(0.5deg) scale(1.02);
+    }
+  }
+
+  .animate-goofy {
+    animation: goofyWiggle 1s ease-in-out infinite;
   }
 }

@@ -6,11 +6,13 @@ import Image from 'next/image'
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from 'react-hook-form'
-import { Button } from "@/components/ui/button"
+import axios from 'axios'
+import { toast } from "sonner"
+// import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
+    // FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -21,13 +23,15 @@ import { ShimmerButton } from '../magicui/shimmer-button'
 
 const formSchema = z.object({
     username: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
+        message: "Full name must be at least 2 characters.",
+    }).regex(/^[a-zA-Z\s]*$/, {
+        message: "Full name can only contain letters and spaces.",
     }),
-    email: z.string().min(2, {
-        message: "Email must be at least 2 characters.",
+    email: z.string().email({
+        message: "Email must be a valid email address.",
     }),
-    message: z.string().min(2, {
-        message: "Message must be at least 2 characters.",
+    message: z.string().min(20, {
+        message: "Message must be at least 20 characters.",
     }),
 })
 
@@ -42,15 +46,30 @@ function ContactHere() {
         },
     })
 
-    function onSubmit(data: z.infer<typeof formSchema>) {
-        console.log(data)
+    async function onSubmit(data: z.infer<typeof formSchema>) {
+        try {
+            const response = await axios.post('/api/send', data); // use correct route
+
+            if (response.status === 200) {
+                toast.success("Your Outreach has been sent!🎉", {
+                    description: "Your message has been received! We'll get back to you soon.",
+                })
+                form.reset();
+            } else {
+                console.warn('⚠️ Something went wrong:', response);
+                alert('Failed to send message.');
+            }
+        } catch (error) {
+            console.error('❌ Error sending message:', error);
+            alert('An error occurred. Please try again later.');
+        }
     }
 
     return (
         <div className='p-7 font-handlee flex flex-col sm:flex-row sm:items-end gap-5 sm:gap-0'>
             <div className='flex flex-1/3 flex-col gap-5 my-auto items-start sm:ml-10'>
                 <span className='bg-pink-300 text-xl font-bold drop-shadow-md'>Contact here</span>
-                <span className='transform rotate-240 translate-x-20'>
+                <span className='transform sm:rotate-240 rotate-290 sm:translate-x-20 transition-all duration-300'>
                     <Image src={images.arrow} alt='arrow' className='translate-y-[1rem]'></Image>
                 </span>
                 <p className='font-inter'>Have a project idea? <br />
@@ -85,7 +104,7 @@ function ContactHere() {
                                     <div className='flex flex-row'>
                                         <FormLabel className='bg-yellow-300 border-l-2 border-black transform rotate-[-4deg] font-bold text-nowrap tracking-wider translate-x-1 translate-y-1 text-lg sm:text-xl'>Your Email </FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Prateek_655@live.com" {...field} />
+                                            <Input placeholder="Prateek123@live.com" {...field} />
                                         </FormControl>
                                     </div>
                                     {/* <FormDescription>
@@ -101,10 +120,10 @@ function ContactHere() {
                             render={({ field }) => (
                                 <FormItem>
                                     <div className='flex flex-row'>
-                                    <FormLabel className='bg-blue-300 border-l-2 border-black transform rotate-[-4deg] font-bold text-nowrap tracking-wider translate-x-1 translate-y-1 text-lg sm:text-xl'>About Project</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder=" I want to discuss you about ....... " {...field} />
-                                    </FormControl>
+                                        <FormLabel className=' bg-blue-300 border-l-2 border-black transform rotate-[-4deg] font-bold text-nowrap tracking-wider translate-x-1 translate-y-1 text-lg sm:text-xl'>About Project</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder=" I want to discuss you about ....... " {...field} />
+                                        </FormControl>
                                     </div>
                                     {/* <FormDescription>
                                         This is your public display name.
@@ -113,7 +132,7 @@ function ContactHere() {
                                 </FormItem>
                             )}
                         />
-                        <ShimmerButton type="submit" className='transform rotate-3 justify-self-end'>Submit</ShimmerButton>
+                        <ShimmerButton type="submit" className='hover:animate-goofy transform rotate-3 justify-self-end'>Submit</ShimmerButton>
                     </form>
                 </Form>
             </div>

@@ -6,7 +6,7 @@ import { LucideSparkle } from 'lucide-react';
 
 function Footer() {
     return (
-        <div className=' relative overflow-none ml-auto w-10/12'>
+        <div className=' relative overflow-none ml-auto w-11/12'>
             <DotPattern className="w-full h-full border border-t-0 border-l-3 border-b-0 border-r-0 border-black absolute inset-0 -z-10 flex items-center justify-center overflow-none bg-background">
             </DotPattern>
             <div className="flex flex-col sm:flex-row items-start sm:justify-between p-7 w-full gap-10 sm:gap-0">
