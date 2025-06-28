@@ -22,8 +22,14 @@ export async function POST(request: Request) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error: any) {
-    return new Response(JSON.stringify({ success: false, error: error.message }), {
+  } catch (error: unknown) {
+    let errorMessage = 'An unknown error occurred';
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    } else if (typeof error === 'string') {
+      errorMessage = error;
+    }
+    return new Response(JSON.stringify({ success: false, error: errorMessage }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });

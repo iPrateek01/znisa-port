@@ -12,8 +12,17 @@ function WhatIDo() {
           <Image src={images.arrow} alt='arrow' className='translate-y-[1rem]'></Image>
         </span>
       </div>
+      <div className='flex flex-row items-center justify-between'>
+
       <div className='transform -rotate-6 -translate-x-8'>
         <SkillCard />
+      </div>
+      <div className='transform -rotate-6 -translate-x-8'>
+        <SkillCard />
+      </div>
+      <div className='transform -rotate-6 -translate-x-8'>
+        <SkillCard />
+      </div>
       </div>
     </div>
   )

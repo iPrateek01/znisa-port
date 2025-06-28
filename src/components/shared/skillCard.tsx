@@ -5,7 +5,7 @@ import images from '@/constants/images'
 
 const SkillCard = () => {
   return (
-    <div className="w-96 h-96 perspective-[1000px]">
+    <div className="w-86 h-86 perspective-[1000px]">
       <div className="relative w-full h-full transition-transform duration-700 transform-3d group hover:rotate-x-180 hover:rotate-y-360">
         {/* Front Side */}
         <div className="absolute w-full h-full backface-hidden bg-amber-200 rounded-md ring-4 ring-yellow-300 flex flex-col justify-center items-center p-4">
