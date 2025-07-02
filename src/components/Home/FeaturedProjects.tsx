@@ -10,11 +10,14 @@ function FeaturedProjects() {
                 <span className='transform sm:rotate-240 rotate-290 sm:translate-x-20 transition-all duration-300'>
                     <Image src={images.arrow} alt='arrow' className='translate-y-[1rem]'></Image>
                 </span>
-                <p className='font-inter'> Have been designing <br />
-                since my past 4 years </p>
+                {/* <p className='font-inter'> Have been designing <br />
+                since my past 4 years </p> */}
             </div>
-            <div>
-
+            <div className="d-flex flex-row flex-wrap">
+                  <div className='rounded-sm border-2 border-black'>
+                    hello
+                      {/* <Image src={images.} alt='featuredProject' className=''></Image> */}
+                  </div>
             </div>
         </div>
   )

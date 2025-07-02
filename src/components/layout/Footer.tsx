@@ -6,7 +6,7 @@ import { LucideSparkle } from 'lucide-react';
 
 function Footer() {
     return (
-        <div className=' relative overflow-none ml-auto w-11/12'>
+        <div className=' relative overflow-none mx-auto w-9/12'>
             <DotPattern className="w-full h-full border border-t-0 border-l-3 border-b-0 border-r-0 border-black absolute inset-0 -z-10 flex items-center justify-center overflow-none bg-background">
             </DotPattern>
             <div className="flex flex-col sm:flex-row items-start sm:justify-between p-7 w-full gap-10 sm:gap-0">
@@ -20,7 +20,7 @@ function Footer() {
                         <ShimmerButton>LinkedIn</ShimmerButton>
                         <ShimmerButton>Instagram</ShimmerButton>
                     </div>
-                    <div>Copyright. Portfolio 2025</div>
+                    <div>Thanks to <a href="https://www.figma.com/@zainabnisa" className='text-black font-bold font-handlee tracking-wider'>@zainabnisa</a> for the UI/UX magic ✨</div>
                 </div>
             </div>
         </div>

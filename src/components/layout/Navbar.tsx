@@ -9,7 +9,7 @@ import clsx from 'clsx';
 function Navbar() {
 
     return (
-        <div className='relative overflow-none p-7 font-handlee ml-auto w-11/12'>
+        <div className='relative overflow-none p-7 font-handlee mx-auto w-9/12'>
             <DotPattern className="w-full h-full border border-b-0 border-l-3 border-r-0 border-t-0 border-black absolute inset-0 -z-10 flex items-center justify-center overflow-none bg-background">
             </DotPattern>
             <div className='pt-6 sm:pt-0 sm:w-1/2 flex flex-row items-center justify-between sm:ml-auto'>
@@ -19,9 +19,9 @@ function Navbar() {
                 </div>
                 <div className='flex flex-row items-center gap-5 text-xl font-inter'>
                     {navbar.links.map((item, index) => (
-                        <Link key={index} href={item.href} className={clsx(
+                        <Link key={index} href={item.href} target="_blank" rel="noopener noreferrer" className={clsx(
                             "inline-block transition-all duration-300",
-                            item.name === "Hire Me" &&
+                            item.name === "Resume" &&
                             "bg-gradient-to-t from-pink-300 from-30% to-transparent to-70% hover:from-pink-500 hover:to-transparent hover:from-0%"
                         )}>{item.name}</Link>
                     ))}

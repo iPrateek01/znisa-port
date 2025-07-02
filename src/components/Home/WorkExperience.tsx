@@ -11,8 +11,8 @@ function WorkExperience() {
                 <span className='transform sm:rotate-240 rotate-290 sm:translate-x-20 transition-all duration-300'>
                     <Image src={images.arrow} alt='arrow' className='translate-y-[1rem]'></Image>
                 </span>
-                <p className='font-inter'> Have been designing <br />
-                    since my past 4 years </p>
+                {/* <p className='font-inter'> Have been designing <br />
+                    since my past 4 years </p> */}
             </div>
             <div className="border-none p-12 mx-auto relative text-wrap w-9/12">
                 <div className="space-y-6 w-10/12 mx-auto">

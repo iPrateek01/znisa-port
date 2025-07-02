@@ -7,14 +7,14 @@ export const navbar = {
       href: "/",
     },
     {
-      name: "Hire Me",
-      href: "/",
+      name: "Resume",
+      href: "https://drive.google.com/file/d/1H0klBSIYzuqSsRyI7SaX-1C28ih_cK50/view?usp=sharing",
     },
   ],
 };
 
 export const heroSection = {
-  title: "Hi, I'm Prateek Shende",
+  title: "Hi, I'm Prateek 👋",
   subtitle: "I develop top notch websites",
   description: "As a frontend developer, I create dynamic and engaging websites with the power of coding languages and modern frameworks.",
   cta: "Hire Me",

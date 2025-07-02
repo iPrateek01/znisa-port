@@ -3,17 +3,19 @@ import avatar from "@/assets/images/avatar.png";
 import github from "@/assets/images/github.png"
 import next from "@/assets/images/next.svg"
 import react from "@/assets/images/react.png"
-// import tailwind from "@/assets/images/tailwind.png"
+import tailwind from "@/assets/images/tailwind.png"
 // import typescript from "@/assets/images/typescript.png"
 // import javascript from "@/assets/images/javascript.png"
-// import nodejs from "@/assets/images/nodejs.png"
-// import express from "@/assets/images/express.png"
-// import mongodb from "@/assets/images/mongodb.png"
+import nodejs from "@/assets/images/node.png"
+import express from "@/assets/images/express.png"
+import mongodb from "@/assets/images/mongodb.png"
 // import mysql from "@/assets/images/mysql.png"
 // import postgresql from "@/assets/images/postgresql.png"
 import vue from "@/assets/images/vue.png"
 import nuxt from "@/assets/images/nuxt.png"
 import git from "@/assets/images/git.png"
+import pinia from "@/assets/images/pinia.png"
+import vuetify from "@/assets/images/vuetify.png"
 
 const images = {
     arrow,
@@ -21,12 +23,12 @@ const images = {
     github,
     next,
     react,
-    // tailwind,
+    tailwind,
     // typescript,
     // javascript,
-    // nodejs,
-    // express,
-    // mongodb,
+    nodejs,
+    express,
+    mongodb,
     // mysql,
     // postgresql,
     // html,
@@ -34,6 +36,10 @@ const images = {
     vue,
     nuxt,
     git,
+    pinia,
+    vuetify,
+    // atiz,
+    // cma,
 };
 
 // const orbitIcons = {

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { ShimmerButton } from '@/components/magicui/shimmer-button'
 import { heroSection } from '@/constants/text'
 
+
 function HeroSection() {
   return (
     <div className='p-7 font-handlee flex flex-col sm:flex-row sm:items-end justify-between gap-5 sm:gap-0'>
