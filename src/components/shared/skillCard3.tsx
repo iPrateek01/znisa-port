@@ -1,11 +1,11 @@
 'use client'
-import Image from 'next/image'
-import images from '@/constants/images'
+// import Image from 'next/image'
+// import images from '@/constants/images'
 import { File, Folder, Tree } from "@/components/magicui/file-tree";
 
 const SkillCard1 = () => {
   return (
-    <div className="w-68 h-96 perspective-[1000px]">
+    <div className="w-56 h-72 sm:w-68 sm:h-96 ml-18 sm:ml-0 perspective-[1000px]">
       <div className="relative w-full h-full">
         <div className="absolute w-full h-full backface-hidden bg-fuchsia-200 rounded-md ring-4 ring-fuchsia-300 flex flex-col justify-center items-center">
           <h1 className="absolute -right-5 top-10 text-transform rotate-8 bg-yellow-200">Other</h1>

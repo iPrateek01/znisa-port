@@ -10,14 +10,14 @@ function Navbar() {
 
     return (
         <div className='relative overflow-none p-7 font-handlee mx-auto w-9/12'>
-            <DotPattern className="w-full h-full border border-b-0 border-l-3 border-r-0 border-t-0 border-black absolute inset-0 -z-10 flex items-center justify-center overflow-none bg-background">
+            <DotPattern className="w-full h-full absolute inset-0 -z-10 flex items-center justify-center overflow-none bg-background">
             </DotPattern>
-            <div className='pt-6 sm:pt-0 sm:w-1/2 flex flex-row items-center justify-between sm:ml-auto'>
+            <div className='pt-6 sm:pt-0 sm:w-1/2 flex flex-row items-center gap-13 sm:gap-0 justify-between sm:ml-auto'>
                 <div className='flex flex-row items-center gap-2 sm:text-2xl font-bold'>
                     <LucideSparkle fill='black' size={35} />
                     <span>Prateek</span>
                 </div>
-                <div className='flex flex-row items-center gap-5 text-xl font-inter'>
+                <div className='flex flex-row items-center gap-2 sm:gap-5 sm:text-xl font-inter'>
                     {navbar.links.map((item, index) => (
                         <Link key={index} href={item.href} target="_blank" rel="noopener noreferrer" className={clsx(
                             "inline-block transition-all duration-300",

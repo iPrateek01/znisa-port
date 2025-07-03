@@ -5,7 +5,7 @@ import images from '@/constants/images'
 
 const SkillCard1 = () => {
   return (
-    <div className="w-68 h-96 perspective-[1000px]">
+    <div className="w-56 h-72 sm:w-68 sm:h-96 ml-18 sm:ml-0 perspective-[1000px]">
       <div className="relative w-full h-full">
         <div className="absolute w-full h-full backface-hidden bg-sky-200 rounded-md ring-4 ring-sky-300 flex flex-col justify-center items-center p-4">
           <h1 className="absolute right-5 -top-3 text-transform -rotate-8 bg-fuchsia-200">Tech Stack</h1>

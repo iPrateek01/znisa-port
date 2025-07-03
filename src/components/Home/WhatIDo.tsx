@@ -14,7 +14,7 @@ function WhatIDo() {
           <Image src={images.arrow} alt='arrow' className='translate-y-[1rem]'></Image>
         </span>
       </div>
-      <div className='flex flex-row items-center justify-between gap-12 mt-5'>
+      <div className='flex flex-col sm:flex-row items-center justify-between gap-12 mt-5'>
 
       <div className='transform -rotate-6 -translate-x-8'>
         <SkillCard2 />

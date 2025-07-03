@@ -11,10 +11,10 @@ import FeaturedProjects from "@/components/Home/FeaturedProjects";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col h-dvh">
       <Navbar />
       <main className="relative w-9/12 mx-auto">
-        <DotPattern className="fixed w-9/12 mx-auto h-screen inset-0 -z-10 bg-background border-l-3 border-black" />
+        <DotPattern className="fixed w-9/12 mx-auto h-full inset-0 -z-10 bg-background border-l-3 border-black" />
           <div className="relative z-10 flex flex-col gap-10">
             <HeroSection />
             <hr className="w-8 h-[3px] bg-pink-500 mx-auto" />
